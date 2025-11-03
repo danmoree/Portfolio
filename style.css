@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0a0a;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 5%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.logo {
+  font-size: 1.5em;
+  letter-spacing: 2px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00ffff;
+}
+
+.intro {
+  text-align: center;
+  margin-top: 20vh;
+}
+
+.intro h2 {
+  font-size: 2.5em;
+  letter-spacing: 2px;
+}
+
+.intro h3 {
+  color: #00ffff;
+  margin-bottom: 1em;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #00ffff;
+  color: black;
+  padding: 0.7em 1.5em;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.btn:hover {
+  background-color: #008b8b;
+}
+
+footer {
+  text-align: center;
+  padding: 2em 0;
+}
+
+.socials a {
+  color: white;
+  margin: 0 10px;
+  font-size: 1.5em;
+  transition: color 0.3s;
+}
+
+.socials a:hover {
+  color: #00ffff;
+}
