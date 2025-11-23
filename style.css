@@ -164,7 +164,6 @@ footer {
   width: 25%;
   align-self: flex-start;
   color: white;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
   padding-right: 2em;
   height: fit-content;
 }
@@ -202,6 +201,15 @@ footer {
   padding-right: 10em;
 }
 
+.about-content::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+.about-content {
+  scrollbar-width: none; /* Firefox */
+}
+
 .about-content h3 {
   position: relative;
   font-size: 1.5em;
@@ -212,13 +220,12 @@ footer {
 .about-content h3::before {
   content: '';
   position: absolute;
-  left: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 12px;  /* circle size */
+  left: -10px; /* shifts circle directly over the vertical line */
+  top: 8px; /* ensures vertical alignment with text baseline */
+  width: 12px;
   height: 12px;
   border-radius: 50%;
-  background-color: #ffffff; /* or white for subtle */
+  background-color: #ffffff;
 }
 /* Section spacing */
 .section {
@@ -245,4 +252,69 @@ footer {
 .profile-box p:first-of-type {
   margin-top: 0.5em;
   margin-bottom: 1.5em;
+}
+
+.profile-box p {
+  color: #ccc;
+}
+
+/* Personal Details + Interests Section */
+.details-interests {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2em;
+  gap: 4em;
+}
+
+.personal-details h4,
+.interests-box h4 {
+  font-size: 1.4em;
+  margin-bottom: 0.8em;
+}
+
+.personal-details p {
+  margin-bottom: 0.6em;
+  display: flex;
+  gap: 1em;
+  color: #ccc;
+}
+
+.personal-details p strong {
+  width: 90px; /* adjust as needed */
+  display: inline-block;
+}
+
+.interests-box {
+  width: 50%;
+}
+
+.interest-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1em;
+}
+
+.interest-item {
+  border: 1px solid rgba(255,255,255,0.2);
+  padding: 1em;
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.95em;
+  min-height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+  color: #ccc;
+}
+
+.interest-item:hover {
+  background-color: rgba(255,255,255,0.1);
+  transform: scale(1.05);
+}
+
+.intro-line {
+  border-left: 2.5px solid rgba(255,255,255,0.35);
+  padding-left: 2.6em; /* increased to push line left */
+  margin-left: -0.3em;  /* decreased to shift line left */
 }
