@@ -299,20 +299,39 @@ footer {
   padding: 1em;
   border-radius: 8px;
   text-align: center;
-  font-size: 0.95em;
   min-height: 70px;
+
   display: flex;
+  flex-direction: column;   /* 👈 stack vertically */
   align-items: center;
   justify-content: center;
-  transition: background 0.3s, transform 0.3s;
+  gap: 0.4em;
+
   color: #ccc;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.interest-item .emoji {
+  font-size: 1.4em; /* emoji on its own line */
+}
+
+.interest-item .label {
+  font-size: 0.9em;
 }
 
 .interest-item:hover {
-  background-color: rgba(255,255,255,0.1);
-  transform: scale(1.05);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.4);
 }
 
+.interest-item:hover .emoji {
+  transform: scale(1.15);
+}
+
+.interest-item .emoji {
+  transition: transform 0.3s ease;
+}
 .intro-line {
   border-left: 2.5px solid rgba(255,255,255,0.35);
   padding-left: 2.6em; /* increased to push line left */
