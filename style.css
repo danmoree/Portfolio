@@ -970,3 +970,40 @@ footer {
     font-size: 0.85em;
   }
 }
+
+/* Tool icon images (for icons not in devicons) */
+.tool-icon .tool-img {
+  width: 2.2em;
+  height: 2.2em;
+  filter: invert(0) opacity(0.85);
+  transition: transform 0.3s ease;
+}
+
+.tool-icon:hover .tool-img {
+  transform: scale(1.15);
+}
+
+/* Colored tool icons using CSS filters */
+.tool-icon .tool-img {
+  filter: brightness(1) invert(0);
+}
+
+/* Adobe Lightroom - Blue #31A8FF */
+.tool-icon .lightroom-icon {
+  filter: invert(58%) sepia(89%) saturate(1282%) hue-rotate(186deg) brightness(102%) contrast(101%);
+}
+
+/* Adobe Premiere Pro - Purple #9999FF */
+.tool-icon .premiere-icon {
+  filter: invert(64%) sepia(68%) saturate(2274%) hue-rotate(212deg) brightness(101%) contrast(101%);
+}
+
+/* DaVinci Resolve - Custom PNG */
+.tool-icon .davinci-icon {
+  filter: none;
+}
+
+/* Ableton Live - White/Light */
+.tool-icon .ableton-icon {
+  filter: brightness(0) invert(1);
+}
