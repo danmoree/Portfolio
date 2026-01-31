@@ -5,20 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | Daniel Moreno</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
-<script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-<script src="background.js"></script>
 <body>
   <div id="particles-js"></div>
-   <header>
+  <header>
     <h1 class="logo"><span></span></h1>
-    <nav>
-      <a href="index.html" class="active">Home</a>
-      <a href="about.html">About</a>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
       <a href="projects.html">Projects</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
   </header>
 
   <main class="about-container">
@@ -43,7 +46,7 @@
             <div>
               <h4>DANIEL MORENO</h4>
               <p>iOS Developer & Data Analytics Enthusiast</p>
-              <p>I’m passionate about crafting innovative, user-friendly applications and visualizing meaningful insights from data. My creativity extends into music production and photography, where I find design inspiration in rhythm and light.</p>
+              <p>I'm passionate about crafting innovative, user-friendly applications and visualizing meaningful insights from data. My creativity extends into music production and photography, where I find design inspiration in rhythm and light.</p>
             </div>
           </div>
 
@@ -63,29 +66,29 @@
               <div class="interest-grid">
                 <div class="interest-item">
                     <span class="emoji">🎸</span>
-                    <span class="label">Music Production</span> 
+                    <span class="label">Music Production</span>
                 </div>
                 <div class="interest-item">
                     <span class="emoji">🎵</span>
-                    <span class="label">Music</span> 
+                    <span class="label">Music</span>
                 </div>
                  <div class="interest-item">
                     <span class="emoji">📷</span>
-                    <span class="label">Photography</span> 
+                    <span class="label">Photography</span>
                 </div>
                  <div class="interest-item">
                     <span class="emoji">🎬</span>
-                    <span class="label">Movies & Shows</span> 
+                    <span class="label">Movies & Shows</span>
                 </div>
                  <div class="interest-item">
                     <span class="emoji">💻</span>
-                    <span class="label">Coding</span> 
+                    <span class="label">Coding</span>
                 </div>
                  <div class="interest-item">
                     <span class="emoji">🛩️</span>
-                    <span class="label">Aviation</span> 
+                    <span class="label">Aviation</span>
                 </div>
-                
+
               </div>
             </div>
           </div>
@@ -109,5 +112,27 @@
   </main>
 
   <script src="background.js"></script>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-menu');
+      nav.classList.toggle('active');
+    }
+
+    // Close menu when clicking a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const nav = document.getElementById('nav-menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>

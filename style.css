@@ -32,14 +32,35 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1em 5%;
-  margin-top: 3.5em;
-  padding-right: 10em;
+  margin-top: 2em;
+  padding-right: 5%;
   font-size: 19px;
 }
 
 .logo {
   font-size: 1.5em;
   letter-spacing: 2px;
+}
+
+/* Mobile menu toggle button */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 2px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+nav {
+  display: flex;
+  gap: 15px;
 }
 
 nav a {
@@ -80,7 +101,6 @@ nav a.active {
   font-size: 2rem;
   color: #ffffff;
   margin-bottom: 1em;
-  white-space: nowrap;
 }
 
 .main-desc {
@@ -159,8 +179,8 @@ footer {
 
 /* Left sidebar */
 .about-sidebar {
-  position: sticky;     /* Keeps it static while scrolling */
-  top: 100px;           /* Adjust based on header height */
+  position: sticky;
+  top: 100px;
   width: 25%;
   align-self: flex-start;
   color: white;
@@ -198,7 +218,7 @@ footer {
   overflow-y: auto;
   max-height: 80vh;
   padding-left: 2em;
-  padding-right: 10em;
+  padding-right: 5%;
 }
 
 .about-content::-webkit-scrollbar {
@@ -214,19 +234,20 @@ footer {
   position: relative;
   font-size: 1.5em;
   margin-bottom: 1em;
-  padding-left: 30px; /* space for the circle */
+  padding-left: 30px;
 }
 
 .about-content h3::before {
   content: '';
   position: absolute;
-  left: -10px; /* shifts circle directly over the vertical line */
-  top: 8px; /* ensures vertical alignment with text baseline */
+  left: -10px;
+  top: 8px;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   background-color: #ffffff;
 }
+
 /* Section spacing */
 .section {
   margin-bottom: 3em;
@@ -280,7 +301,7 @@ footer {
 }
 
 .personal-details p strong {
-  width: 90px; /* adjust as needed */
+  width: 90px;
   display: inline-block;
 }
 
@@ -300,19 +321,17 @@ footer {
   border-radius: 8px;
   text-align: center;
   min-height: 70px;
-
   display: flex;
-  flex-direction: column;   /* 👈 stack vertically */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 0.4em;
-
   color: #ccc;
   transition: background 0.3s, transform 0.3s;
 }
 
 .interest-item .emoji {
-  font-size: 1.4em; /* emoji on its own line */
+  font-size: 1.4em;
 }
 
 .interest-item .label {
@@ -332,8 +351,350 @@ footer {
 .interest-item .emoji {
   transition: transform 0.3s ease;
 }
+
 .intro-line {
   border-left: 2.5px solid rgba(255,255,255,0.35);
-  padding-left: 2.6em; /* increased to push line left */
-  margin-left: -0.3em;  /* decreased to shift line left */
+  padding-left: 2.6em;
+  margin-left: -0.3em;
+}
+
+/* ========================================
+   RESPONSIVE STYLES
+   ======================================== */
+
+/* Tablet - 1024px and below */
+@media (max-width: 1024px) {
+  header {
+    margin-top: 1.5em;
+    padding: 1em 4%;
+    font-size: 17px;
+  }
+
+  .center-content {
+    width: 85%;
+    padding: 2em;
+  }
+
+  .main-name {
+    font-size: 3rem;
+  }
+
+  .main-title {
+    font-size: 1.6rem;
+  }
+
+  .about-container {
+    width: 95%;
+  }
+
+  .about-sidebar h2 {
+    font-size: 2.5em;
+  }
+
+  .about-content {
+    padding-right: 2em;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
+  .interest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Tablet portrait and large phones - 768px and below */
+@media (max-width: 768px) {
+  header {
+    margin-top: 1em;
+    padding: 1em 5%;
+    font-size: 16px;
+    position: relative;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: rgba(10, 10, 10, 0.98);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  nav.active {
+    right: 0;
+  }
+
+  nav a {
+    margin: 0;
+    font-size: 1.2em;
+  }
+
+  .center-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 90%;
+    padding: 6em 1.5em 3em;
+    margin: 0 auto;
+  }
+
+  .main-name {
+    font-size: 2.5rem;
+  }
+
+  .main-title {
+    font-size: 1.3rem;
+  }
+
+  .main-desc {
+    font-size: 0.95rem;
+  }
+
+  .btn {
+    padding: 0.6em 1.5em;
+    font-size: 0.9rem;
+    margin-top: 2em;
+  }
+
+  .socials a {
+    margin: 0 10px;
+    font-size: 1.2em;
+  }
+
+  /* About page responsive */
+  .about-container {
+    flex-direction: column;
+    width: 90%;
+    margin: 2em auto;
+  }
+
+  .about-sidebar {
+    position: static;
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 2em;
+    text-align: center;
+  }
+
+  .about-sidebar h2 {
+    font-size: 2em;
+  }
+
+  .about-sidebar ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 1em;
+  }
+
+  .about-sidebar li {
+    margin: 0;
+  }
+
+  .about-content {
+    width: 100%;
+    max-height: none;
+    overflow-y: visible;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .about-content h3 {
+    padding-left: 25px;
+  }
+
+  .about-content h3::before {
+    left: -5px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .profile-box {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-box h4 {
+    font-size: 1.6em;
+  }
+
+  .intro-line {
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .details-interests {
+    flex-direction: column;
+    gap: 2em;
+  }
+
+  .personal-details {
+    text-align: left;
+  }
+
+  .interests-box {
+    width: 100%;
+  }
+
+  .interest-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile phones - 480px and below */
+@media (max-width: 480px) {
+  header {
+    margin-top: 0.5em;
+    padding: 0.8em 4%;
+    font-size: 14px;
+  }
+
+  .center-content {
+    width: 95%;
+    padding: 5em 1em 2em;
+  }
+
+  .main-name {
+    font-size: 1.8rem;
+  }
+
+  .main-title {
+    font-size: 1.1rem;
+  }
+
+  .main-desc {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .btn {
+    padding: 0.5em 1.2em;
+    font-size: 0.85rem;
+    margin-top: 1.5em;
+  }
+
+  .socials {
+    margin-top: 1.5em;
+  }
+
+  .socials a {
+    margin: 0 8px;
+    font-size: 1.1em;
+  }
+
+  .about-container {
+    margin: 1.5em auto;
+  }
+
+  .about-sidebar h2 {
+    font-size: 1.6em;
+  }
+
+  .about-sidebar .subtitle {
+    font-size: 0.9em;
+  }
+
+  .about-content h3 {
+    font-size: 1.2em;
+    padding-left: 20px;
+  }
+
+  .about-content h3::before {
+    width: 8px;
+    height: 8px;
+    top: 6px;
+  }
+
+  .profile-img {
+    width: 150px;
+    height: 150px;
+  }
+
+  .profile-box h4 {
+    font-size: 1.4em;
+  }
+
+  .profile-box p {
+    font-size: 0.9em;
+  }
+
+  .personal-details h4,
+  .interests-box h4 {
+    font-size: 1.2em;
+  }
+
+  .personal-details p {
+    font-size: 0.9em;
+    flex-direction: column;
+    gap: 0.2em;
+  }
+
+  .personal-details p strong {
+    width: auto;
+  }
+
+  .interest-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8em;
+  }
+
+  .interest-item {
+    padding: 0.8em;
+    min-height: 60px;
+  }
+
+  .interest-item .emoji {
+    font-size: 1.2em;
+  }
+
+  .interest-item .label {
+    font-size: 0.8em;
+  }
+
+  .section {
+    margin-bottom: 2em;
+  }
+}
+
+/* Extra small phones - 360px and below */
+@media (max-width: 360px) {
+  .main-name {
+    font-size: 1.5rem;
+  }
+
+  .main-title {
+    font-size: 1rem;
+  }
+
+  .interest-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6em;
+  }
+
+  .interest-item {
+    padding: 0.6em;
+  }
 }

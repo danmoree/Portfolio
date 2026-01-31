@@ -9,14 +9,19 @@
   href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
 />
   <link rel="stylesheet" href="style.css" />
-  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script> <!-- particle effect -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
   <div id="particles-js"></div>
 
   <header>
     <h1 class="logo"><span></span></h1>
-    <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav-menu">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="projects.html">Projects</a>
@@ -30,7 +35,7 @@
         <h1 class="main-name">DANIEL MORENO.</h1>
         <h2 class="main-title">Software Developer & UI/UX Designer</h2>
         <p class="main-desc">
-          A developer who finds creativity in both code and art. My focus lies in iOS development and data analytics, where I strive to create apps that are smart, fluid, and human-centered. When I’m not coding, you’ll likely find me behind a camera or producing music — both remind me that great design, like great sound, is about harmony and attention to detail
+          A developer who finds creativity in both code and art. My focus lies in iOS development and data analytics, where I strive to create apps that are smart, fluid, and human-centered. When I'm not coding, you'll likely find me behind a camera or producing music — both remind me that great design, like great sound, is about harmony and attention to detail
         </p>
         <a href="about.html" class="btn">View My Work</a>
         <div class="socials">
@@ -47,5 +52,27 @@
   </footer>
 
   <script src="background.js"></script>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-menu');
+      nav.classList.toggle('active');
+    }
+
+    // Close menu when clicking a link
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('active');
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const nav = document.getElementById('nav-menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
