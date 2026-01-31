@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Me | Daniel Moreno</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
 </head>
 <body>
@@ -34,6 +36,12 @@
         <li><a href="#skills">Skills</a></li>
         <li><a href="#education">Education</a></li>
       </ul>
+      <div class="sidebar-socials">
+        <a href="#"><i class="fa-brands fa-google"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-spotify"></i></a>
+      </div>
     </aside>
 
     <!-- Right content (scrollable) -->
@@ -88,25 +96,100 @@
                     <span class="emoji">🛩️</span>
                     <span class="label">Aviation</span>
                 </div>
-
               </div>
             </div>
           </div>
         </div>
       </div>
 
+      <!-- Skills Section -->
       <div id="skills" class="section">
         <h3>Skills</h3>
-        <ul>
-          <li>Swift, Python, Java</li>
-          <li>Firebase, SQL, Data Visualization</li>
-          <li>UI/UX Design, Figma, Photoshop</li>
-        </ul>
+        <div class="skills-grid">
+          <!-- iOS Development Card -->
+          <div class="skill-card">
+            <h4>iOS Development</h4>
+            <p>I specialize in building native iOS applications with Swift, creating intuitive and performant mobile experiences with clean architecture.</p>
+            <div class="tools-section">
+              <span class="tools-label">Tools I use</span>
+              <div class="tools-icons">
+                <div class="tool-icon">
+                  <i class="devicon-swift-plain colored"></i>
+                  <span>Swift</span>
+                </div>
+                <div class="tool-icon">
+                  <i class="devicon-xcode-plain colored"></i>
+                  <span>Xcode</span>
+                </div>
+                <div class="tool-icon">
+                  <i class="devicon-firebase-plain colored"></i>
+                  <span>Firebase</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Data Analytics Card -->
+          <div class="skill-card">
+            <h4>Data Analytics</h4>
+            <p>I transform raw data into meaningful insights through visualization and analysis, helping drive data-informed decisions.</p>
+            <div class="tools-section">
+              <span class="tools-label">Tools I use</span>
+              <div class="tools-icons">
+                <div class="tool-icon">
+                  <i class="devicon-python-plain colored"></i>
+                  <span>Python</span>
+                </div>
+                <div class="tool-icon">
+                  <i class="devicon-mysql-plain colored"></i>
+                  <span>SQL</span>
+                </div>
+                <div class="tool-icon">
+                  <i class="devicon-r-plain colored"></i>
+                  <span>R</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- UI/UX Design Card -->
+          <div class="skill-card">
+            <h4>UI/UX & Graphic Design</h4>
+            <p>I create visually compelling and user-friendly designs, enhancing the overall user experience with attention to detail and creativity.</p>
+            <div class="tools-section">
+              <span class="tools-label">Tools I use</span>
+              <div class="tools-icons">
+                <div class="tool-icon">
+                  <i class="devicon-figma-plain colored"></i>
+                  <span>Figma</span>
+                </div>
+                <div class="tool-icon">
+                  <i class="devicon-photoshop-plain colored"></i>
+                  <span>Photoshop</span>
+                </div>
+                <div class="tool-icon">
+                  <i class="devicon-canva-original colored"></i>
+                  <span>Canva</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
+      <!-- Education Section -->
       <div id="education" class="section">
         <h3>Education</h3>
-        <p>B.S. in Computer Science — New Mexico State University</p>
+        <div class="education-card">
+          <div class="education-icon">
+            <i class="fas fa-graduation-cap"></i>
+          </div>
+          <div class="education-details">
+            <h4>New Mexico State University</h4>
+            <p class="degree">B.S. in Computer Science</p>
+            <p class="education-desc">Focused on software development, data structures, algorithms, and human-computer interaction. Developed strong foundations in iOS development and data analytics through coursework and personal projects.</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>

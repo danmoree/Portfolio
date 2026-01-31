@@ -296,6 +296,21 @@ footer {
 .personal-details p {
   margin-bottom: 0.6em;
   display: flex;
+.personal-details {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5em;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.personal-details:hover,
+.interests-box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
   gap: 1em;
   color: #ccc;
 }
@@ -306,6 +321,11 @@ footer {
 }
 
 .interests-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5em;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
   width: 50%;
 }
 
@@ -556,6 +576,11 @@ footer {
   }
 
   .interests-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.5em;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
     width: 100%;
   }
 
@@ -696,5 +721,252 @@ footer {
 
   .interest-item {
     padding: 0.6em;
+  }
+}
+
+/* ========================================
+   SKILLS CARDS
+   ======================================== */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5em;
+  margin-top: 1em;
+}
+
+.skill-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1.8em;
+  transition: transform 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.skill-card h4 {
+  font-size: 1.3em;
+  margin-bottom: 0.8em;
+  color: #fff;
+}
+
+.skill-card p {
+  color: #aaa;
+  font-size: 0.9em;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+}
+
+.tools-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1.2em;
+}
+
+.tools-label {
+  font-size: 0.85em;
+  color: #888;
+  display: block;
+  margin-bottom: 1em;
+}
+
+.tools-icons {
+  display: flex;
+  gap: 1.2em;
+  flex-wrap: wrap;
+}
+
+.tool-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4em;
+}
+
+.tool-icon i {
+  font-size: 2.2em;
+  transition: transform 0.3s ease;
+}
+
+.tool-icon:hover i {
+  transform: scale(1.15);
+}
+
+.tool-icon span {
+  font-size: 0.7em;
+  color: #888;
+  text-transform: uppercase;
+}
+
+/* ========================================
+   EDUCATION CARD
+   ======================================== */
+
+.education-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5em;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 2em;
+  margin-top: 1em;
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.education-icon {
+  width: 70px;
+  height: 70px;
+  min-width: 70px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.education-icon i {
+  font-size: 1.8em;
+  color: #fff;
+}
+
+.education-details h4 {
+  font-size: 1.4em;
+  margin-bottom: 0.3em;
+  color: #fff;
+}
+
+.education-details .degree {
+  font-size: 1em;
+  color: #ccc;
+  margin-bottom: 1em;
+}
+
+.education-details .education-desc {
+  font-size: 0.9em;
+  color: #888;
+  line-height: 1.6;
+}
+
+/* Sidebar socials */
+.sidebar-socials {
+  margin-top: 3em;
+  display: flex;
+  gap: 1em;
+}
+
+.sidebar-socials a {
+  color: #888;
+  font-size: 1.1em;
+  transition: color 0.3s ease;
+}
+
+.sidebar-socials a:hover {
+  color: #fff;
+}
+
+/* ========================================
+   RESPONSIVE - SKILLS & EDUCATION
+   ======================================== */
+
+@media (max-width: 1024px) {
+  .skills-grid {
+    gap: 1.2em;
+  }
+
+  .skill-card {
+    padding: 1.5em;
+  }
+
+  .skill-card h4 {
+    font-size: 1.2em;
+  }
+
+  .tool-icon i {
+    font-size: 1.8em;
+  }
+}
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-card {
+    padding: 1.5em;
+  }
+
+  .education-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5em;
+  }
+
+  .education-icon {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+  }
+
+  .education-icon i {
+    font-size: 1.5em;
+  }
+
+  .sidebar-socials {
+    justify-content: center;
+    margin-top: 2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .skill-card {
+    padding: 1.2em;
+  }
+
+  .skill-card h4 {
+    font-size: 1.1em;
+  }
+
+  .skill-card p {
+    font-size: 0.85em;
+  }
+
+  .tools-icons {
+    gap: 1em;
+  }
+
+  .tool-icon i {
+    font-size: 1.6em;
+  }
+
+  .tool-icon span {
+    font-size: 0.6em;
+  }
+
+  .education-card {
+    padding: 1.2em;
+  }
+
+  .education-details h4 {
+    font-size: 1.2em;
+  }
+
+  .education-details .degree {
+    font-size: 0.9em;
+  }
+
+  .education-details .education-desc {
+    font-size: 0.85em;
   }
 }
