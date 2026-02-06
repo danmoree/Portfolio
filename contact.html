@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Daniel Moreno</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
+</head>
+<body>
+  <div id="particles-js"></div>
+  <header>
+    <h1 class="logo"><span></span></h1>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav id="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html" class="active">Contact</a>
+    </nav>
+  </header>
+
+  <main class="about-container">
+    <!-- Left sidebar -->
+    <aside class="about-sidebar">
+      <h2>CONTACT</h2>
+      <p class="subtitle">Let's Connect</p>
+      <ul>
+        <li><a href="#get-in-touch">Get In Touch</a></li>
+        <li><a href="#send-message">Send Message</a></li>
+      </ul>
+      <div class="sidebar-socials">
+        <a href="#"><i class="fa-brands fa-google"></i></a>
+        <a href="#"><i class="fa-brands fa-github"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="#"><i class="fa-brands fa-spotify"></i></a>
+      </div>
+    </aside>
+
+    <!-- Right content -->
+    <section class="about-content">
+      
+      <!-- Get In Touch Section -->
+      <div id="get-in-touch" class="section">
+        <h3>Get In Touch</h3>
+        <div class="intro-line">
+          <p class="section-desc">I'm always open to new opportunities, collaborations, or just a friendly chat. Feel free to reach out!</p>
+          
+          <div class="contact-cards">
+            <!-- Email Card -->
+            <a href="mailto:danmore0101@gmail.com" class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Email</h4>
+                <p>danmore0101@gmail.com</p>
+              </div>
+            </a>
+
+            <!-- Phone Card -->
+            <a href="tel:+15756804043" class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-phone"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Phone</h4>
+                <p>(575) 680 - 4043</p>
+              </div>
+            </a>
+
+            <!-- Location Card -->
+            <div class="contact-card">
+              <div class="contact-icon">
+                <i class="fas fa-location-dot"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Location</h4>
+                <p>New Mexico, USA</p>
+              </div>
+            </div>
+
+            <!-- LinkedIn Card -->
+            <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-card">
+              <div class="contact-icon">
+                <i class="fab fa-linkedin"></i>
+              </div>
+              <div class="contact-details">
+                <h4>LinkedIn</h4>
+                <p>Connect with me</p>
+              </div>
+            </a>
+
+            <!-- GitHub Card -->
+            <a href="https://github.com/yourusername" target="_blank" class="contact-card">
+              <div class="contact-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="contact-details">
+                <h4>GitHub</h4>
+                <p>Check out my code</p>
+              </div>
+            </a>
+
+            <!-- Spotify Card -->
+            <a href="https://open.spotify.com/user/yourusername" target="_blank" class="contact-card">
+              <div class="contact-icon">
+                <i class="fab fa-spotify"></i>
+              </div>
+              <div class="contact-details">
+                <h4>Spotify</h4>
+                <p>Listen to my music</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Send Message Section -->
+      <div id="send-message" class="section">
+        <h3>Send Message</h3>
+        <div class="intro-line">
+          <p class="section-desc">Have a project in mind or want to collaborate? Drop me a message and I'll get back to you as soon as possible.</p>
+          
+          <form class="contact-form" action="https://formspree.io/f/yourformid" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="What's this about?">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Your message..." required></textarea>
+            </div>
+            <button type="submit" class="btn submit-btn">
+              <span>Send Message</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <script src="background.js"></script>
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('nav-menu');
+      nav.classList.toggle('active');
+    }
+
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        document.getElementById('nav-menu').classList.remove('active');
+      });
+    });
+
+    document.addEventListener('click', (e) => {
+      const nav = document.getElementById('nav-menu');
+      const toggle = document.querySelector('.menu-toggle');
+      if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+        nav.classList.remove('active');
+      }
+    });
+  </script>
+</body>
+</html>
