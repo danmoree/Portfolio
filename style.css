@@ -2033,3 +2033,28 @@ footer {
 .lightbox-next:hover {
   background: rgba(255, 255, 255, 0.2);
 }
+
+/* Card external link button */
+.card-link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 0.9em;
+  padding: 0.45em 1em;
+  font-size: 0.8em;
+  font-family: 'Montserrat', sans-serif;
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  text-decoration: none;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.card-link-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.card-link-btn i {
+  font-size: 0.75em;
+}
