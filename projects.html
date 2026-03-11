@@ -84,7 +84,6 @@
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="software">Software</button>
             <button class="filter-btn" data-filter="web">Website</button>
-            <!-- <button class="filter-btn" data-filter="design">Design</button> -->
             <button class="filter-btn" data-filter="photography">Photography</button>
             <button class="filter-btn" data-filter="music">Music</button>
             <button class="filter-btn" data-filter="other">Other</button>
@@ -92,6 +91,7 @@
         </div>
 
         <div class="projects-grid" id="projects-grid">
+
           <!-- Project Card 1 -->
           <div class="project-card" data-category="software">
             <div class="project-image">
@@ -138,53 +138,127 @@
             </div>
           </div>
 
-          <!-- Project Card 4 -->
-          <div class="project-card" data-category="design">
-            <div class="project-image">
-              <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+4" alt="Project 4">
+          <!-- Photography Card 1 -->
+          <div class="project-card photo-card" data-category="photography" onclick="openLightbox('set1', 0)">
+            <div class="project-image photo-gallery-preview">
+              <img src="assets/photos/set1/cover.jpg" alt="Photography Collection 1">
+              <div class="photo-count-badge"><i class="fas fa-images"></i> <span id="count-set1">0</span> photos</div>
             </div>
             <div class="project-info">
-              <h4>Project Name</h4>
-              <p>Brief description of the project</p>
-              <div class="project-tech">
-                <span class="tech-tag">Figma</span>
-                <span class="tech-tag">UI/UX</span>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project Card 5 -->
-          <div class="project-card" data-category="other">
-            <div class="project-image">
-              <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+5" alt="Project 5">
-            </div>
-            <div class="project-info">
-              <h4>Project Name</h4>
-              <p>Brief description of the project</p>
+              <h4>Collection Name</h4>
+              <p>Add a description of this photo set</p>
               <div class="project-tech">
                 <span class="tech-tag">Photography</span>
               </div>
             </div>
           </div>
 
-          <!-- Project Card 6 -->
-          <div class="project-card" data-category="other">
-            <div class="project-image">
-              <img src="https://via.placeholder.com/400x250/1a1a1a/ffffff?text=Project+6" alt="Project 6">
+          <!-- Photography Card 2 -->
+          <div class="project-card photo-card" data-category="photography" onclick="openLightbox('set2', 0)">
+            <div class="project-image photo-gallery-preview">
+              <img src="assets/photos/set2/cover.jpg" alt="Photography Collection 2">
+              <div class="photo-count-badge"><i class="fas fa-images"></i> <span id="count-set2">0</span> photos</div>
             </div>
             <div class="project-info">
-              <h4>Project Name</h4>
-              <p>Brief description of the project</p>
+              <h4>Collection Name</h4>
+              <p>Add a description of this photo set</p>
+              <div class="project-tech">
+                <span class="tech-tag">Photography</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Music Card 1 -->
+          <div class="project-card music-card" data-category="music">
+            <div class="project-info">
+              <h4>Neon Lights</h4>
+              <p>Electronic/Deep House &middot; 2024</p>
+              <div class="audio-player">
+                <audio id="audio1" src="assets/music/track1.mp3" preload="metadata"></audio>
+                <button class="play-btn" onclick="togglePlay('audio1', this); event.stopPropagation();">
+                  <i class="fas fa-play"></i>
+                </button>
+                <div class="audio-progress-wrap" data-audio="audio1">
+                  <div class="audio-progress-bar">
+                    <div class="audio-progress" id="prog-audio1"></div>
+                  </div>
+                </div>
+                <span class="audio-time" id="time-audio1">0:00</span>
+              </div>
               <div class="project-tech">
                 <span class="tech-tag">Music</span>
               </div>
             </div>
           </div>
+
+          <!-- Music Card 2 -->
+          <div class="project-card music-card" data-category="music">
+            <div class="project-info">
+              <h4>See you</h4>
+              <p>Electronic/Hip Hop &middot; 2025</p>
+              <div class="audio-player">
+                <audio id="audio2" src="assets/music/track2.mp3" preload="metadata"></audio>
+                <button class="play-btn" onclick="togglePlay('audio2', this); event.stopPropagation();">
+                  <i class="fas fa-play"></i>
+                </button>
+                <div class="audio-progress-wrap" data-audio="audio2">
+                  <div class="audio-progress-bar">
+                    <div class="audio-progress" id="prog-audio2"></div>
+                  </div>
+                </div>
+                <span class="audio-time" id="time-audio2">0:00</span>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Music</span>
+              </div>
+            </div>
+          </div>
+
+                    <!-- Music Card 3 -->
+          <div class="project-card music-card" data-category="music">
+            <div class="project-info">
+              <h4>Subway</h4>
+              <p>Electronic/Lo-fi House &middot; 2025</p>
+              <div class="audio-player">
+                <audio id="audio3" src="assets/music/track3.mp3" preload="metadata"></audio>
+                <button class="play-btn" onclick="togglePlay('audio3', this); event.stopPropagation();">
+                  <i class="fas fa-play"></i>
+                </button>
+                <div class="audio-progress-wrap" data-audio="audio3">
+                  <div class="audio-progress-bar">
+                    <div class="audio-progress" id="prog-audio3"></div>
+                  </div>
+                </div>
+                <span class="audio-time" id="time-audio3">0:00</span>
+              </div>
+              <div class="project-tech">
+                <span class="tech-tag">Music</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
     </section>
   </main>
+
+  <!-- Photo Lightbox Overlay -->
+  <div class="lightbox-overlay" id="lightbox">
+    <button class="lightbox-close" onclick="closeLightbox()">
+      <i class="fas fa-times"></i>
+    </button>
+    <button class="lightbox-prev" onclick="lightboxNav(-1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+    <div class="lightbox-content">
+      <img id="lightbox-img" src="" alt="Photo">
+      <div class="lightbox-counter" id="lightbox-counter">1 / 1</div>
+    </div>
+    <button class="lightbox-next" onclick="lightboxNav(1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
 
   <script src="background.js"></script>
   <script>
@@ -220,7 +294,7 @@
       },
       {
         title: "Parcel",
-        subtitle: "A project management application for music artists ",
+        subtitle: "A project management application for music artists",
         desc: "Transform raw data into meaningful insights through visualization and analysis. This project helps drive data-informed decisions with beautiful charts and reports.",
         image: "https://via.placeholder.com/600x400/1a1a1a/ffffff?text=Project+2",
         visitUrl: "#",
@@ -273,6 +347,142 @@
           } else {
             card.style.display = 'none';
           }
+        });
+      });
+    });
+
+    // =====================
+    // Photo Lightbox
+    // =====================
+
+    // Add your photo file paths here.
+    // Each key is a set name matching the onclick="openLightbox('set1', 0)" on the card.
+    const photoSets = {
+      set1: [
+        'assets/photos/set1/1.jpg',
+        'assets/photos/set1/2.jpg',
+        'assets/photos/set1/3.jpg'
+      ],
+      set2: [
+        'assets/photos/set2/1.jpg',
+        'assets/photos/set2/2.jpg',
+        'assets/photos/set2/3.jpg'
+      ]
+    };
+
+    // Update photo count badges
+    document.addEventListener('DOMContentLoaded', () => {
+      Object.keys(photoSets).forEach(key => {
+        const el = document.getElementById('count-' + key);
+        if (el) el.textContent = photoSets[key].length;
+      });
+    });
+
+    let currentPhotos = [];
+    let currentPhotoIndex = 0;
+
+    function openLightbox(setKey, startIndex) {
+      currentPhotos = photoSets[setKey] || [];
+      if (!currentPhotos.length) return;
+      currentPhotoIndex = startIndex;
+      updateLightboxImage();
+      document.getElementById('lightbox').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    function lightboxNav(dir) {
+      currentPhotoIndex = (currentPhotoIndex + dir + currentPhotos.length) % currentPhotos.length;
+      updateLightboxImage();
+    }
+
+    function updateLightboxImage() {
+      document.getElementById('lightbox-img').src = currentPhotos[currentPhotoIndex];
+      document.getElementById('lightbox-counter').textContent =
+        (currentPhotoIndex + 1) + ' / ' + currentPhotos.length;
+    }
+
+    // Close lightbox when clicking the backdrop
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+      if (e.target === this) closeLightbox();
+    });
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (!document.getElementById('lightbox').classList.contains('active')) return;
+      if (e.key === 'ArrowLeft')  lightboxNav(-1);
+      if (e.key === 'ArrowRight') lightboxNav(1);
+      if (e.key === 'Escape')     closeLightbox();
+    });
+
+    // =====================
+    // Audio Player
+    // =====================
+
+    let activeAudio = null;
+    let activePlayBtn = null;
+
+    function togglePlay(audioId, btn) {
+      const audio = document.getElementById(audioId);
+      const icon  = btn.querySelector('i');
+
+      // Pause any currently playing track
+      if (activeAudio && activeAudio !== audio) {
+        activeAudio.pause();
+        activePlayBtn.querySelector('i').className = 'fas fa-play';
+      }
+
+      if (audio.paused) {
+        audio.play().catch(() => {});
+        icon.className = 'fas fa-pause';
+        activeAudio   = audio;
+        activePlayBtn = btn;
+      } else {
+        audio.pause();
+        icon.className = 'fas fa-play';
+        activeAudio   = null;
+        activePlayBtn = null;
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('.music-card').forEach(card => {
+        const audio       = card.querySelector('audio');
+        const progressEl  = card.querySelector('.audio-progress');
+        const timeEl      = card.querySelector('.audio-time');
+        const progressWrap = card.querySelector('.audio-progress-wrap');
+
+        if (!audio) return;
+
+        // Update progress bar and time display
+        audio.addEventListener('timeupdate', () => {
+          if (audio.duration) {
+            const pct  = (audio.currentTime / audio.duration) * 100;
+            const mins = Math.floor(audio.currentTime / 60);
+            const secs = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+            progressEl.style.width = pct + '%';
+            timeEl.textContent = mins + ':' + secs;
+          }
+        });
+
+        // Reset on track end
+        audio.addEventListener('ended', () => {
+          progressEl.style.width = '0%';
+          timeEl.textContent = '0:00';
+          card.querySelector('.play-btn i').className = 'fas fa-play';
+          activeAudio   = null;
+          activePlayBtn = null;
+        });
+
+        // Seek by clicking the progress bar
+        progressWrap.addEventListener('click', function(e) {
+          if (!audio.duration) return;
+          const rect = this.getBoundingClientRect();
+          audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
         });
       });
     });
