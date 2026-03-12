@@ -85,6 +85,7 @@
             <button class="filter-btn" data-filter="web">Website</button>
             <button class="filter-btn" data-filter="photography">Photography</button>
             <button class="filter-btn" data-filter="music">Music</button>
+            <button class="filter-btn" data-filter="video">Video</button>
             <button class="filter-btn" data-filter="other">Other</button>
           </div>
         </div>
@@ -284,6 +285,61 @@
             </div>
           </div>
 
+
+          <!-- Video Card 1 -->
+          <div class="project-card video-card" data-category="video" onclick="openVideoOverlay('assets/videos/1.mov')">
+            <div class="video-thumb">
+              <img src="assets/videos/thumb1.png" alt="Video 1 thumbnail">
+              <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+            </div>
+            <div class="project-info">
+              <h4>Horror Project</h4>
+              <p>Helped film and edit my buddy's film project, here's a small snippet.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Video</span>
+                <span class="tech-tag">Adobe Premiere</span>
+                <span class="tech-tag">DaVinci Resolve</span>
+                <span class="tech-tag">Shotcut</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Card 2 -->
+          <div class="project-card video-card" data-category="video" onclick="openVideoOverlay('assets/videos/2.mp4')">
+            <div class="video-thumb">
+              <img src="assets/videos/thumb2.png" alt="Video 2 thumbnail">
+              <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+            </div>
+            <div class="project-info">
+              <h4>Astro Timelapse</h4>
+              <p>Timelapse of the summer night sky.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Video</span>
+                <span class="tech-tag">Adobe Premiere</span>
+                <span class="tech-tag">DaVinci Resolve</span>
+                <span class="tech-tag">Shotcut</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Video Card 3 -->
+          <div class="project-card video-card" data-category="video" onclick="openVideoOverlay('assets/videos/3.mp4')">
+            <div class="video-thumb">
+              <img src="assets/videos/thumb3.png" alt="Video 3 thumbnail">
+              <div class="video-play-icon"><i class="fas fa-play-circle"></i></div>
+            </div>
+            <div class="project-info">
+              <h4>Basketball Victory</h4>
+              <p>Another project I helped film and edit.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Video</span>
+                <span class="tech-tag">Adobe Premiere</span>
+                <span class="tech-tag">DaVinci Resolve</span>
+                <span class="tech-tag">Shotcut</span>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -305,6 +361,19 @@
     <button class="lightbox-next" onclick="lightboxNav(1)">
       <i class="fas fa-chevron-right"></i>
     </button>
+  </div>
+
+
+  <!-- Video Overlay -->
+  <div class="video-overlay" id="video-overlay">
+    <button class="video-overlay-close" onclick="closeVideoOverlay()">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="video-overlay-content">
+      <video id="overlay-video" controls playsinline>
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
 
   <script src="background.js"></script>
@@ -547,6 +616,37 @@
           audio.currentTime = ((e.clientX - rect.left) / rect.width) * audio.duration;
         });
       });
+    });
+
+    // =====================
+    // Video Overlay
+    // =====================
+    function openVideoOverlay(src) {
+      const overlay = document.getElementById('video-overlay');
+      const video   = document.getElementById('overlay-video');
+      video.src = src;
+      overlay.classList.add('active');
+      document.body.style.overflow = 'hidden';
+      video.play().catch(() => {});
+    }
+
+    function closeVideoOverlay() {
+      const overlay = document.getElementById('video-overlay');
+      const video   = document.getElementById('overlay-video');
+      video.pause();
+      video.src = '';
+      overlay.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('video-overlay').addEventListener('click', function(e) {
+      if (e.target === this) closeVideoOverlay();
+    });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && document.getElementById('video-overlay').classList.contains('active')) {
+        closeVideoOverlay();
+      }
     });
   </script>
 </body>
